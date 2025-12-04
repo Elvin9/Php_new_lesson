@@ -8,7 +8,10 @@ class Car{
         $this -> color = $color;
         $this -> probeg = $probeg;
     }
-    public function set_probeg($probeg){
+    public function __destruct(){
+        echo "Object is deleted <br>";
+    }
+        public function set_probeg($probeg){
         $this -> probeg = $probeg;
 
 
@@ -34,6 +37,7 @@ $BMW -> drive()."<br>";
 echo " <br> Probeg: ". $BMW->probeg. "<br>";
 echo "probeg: ". $BMW->get_probeg()."<br>";
 echo " <br> Color: ". $BMW->color. "<br>";
+unset($BMW);
 
 
 $Porsche = new Car("White",0);
